@@ -5,7 +5,8 @@ using namespace std;
 
 class Student
 {
-public:
+private: //for perfect encapsulation that means all the attributes are hidden
+//public:
     // Attributes
     int id;
     int age;
@@ -13,10 +14,27 @@ public:
     int nos;
 
 private:
-    int *gpa;
+    float *gpa; // dynamic alloaction
     string phone;
 
 public:
+
+    void setGpa(float a)
+    {
+        // layer of authentication
+        *this->gpa = a;
+    }
+
+    float getGpa() const
+    {
+        return *this->gpa;
+    }
+
+    float getAge() const
+    {
+        return this->age;
+    }
+
     //constructor: default constructor
     Student()
     {
@@ -31,7 +49,7 @@ public:
         this->age = age;
         this->name = name;
         this->nos = nos;
-        this->gpa = new int(gpa);
+        this->gpa = new float(gpa);
         this->phone = phone;
     }
 
@@ -80,10 +98,17 @@ int main()
 {
     Student A(1, 12, "Ramu", 5, 7.8, "Samsung");
 
-    cout << A.age << endl; // can be accesed beacuse it is public 
-    // cout <<A.phone << endl; // cannot be accesed beacuse it is private 
-    // A.chatting(); // cannot be accesed beacuse it is private
-    A.sleep(); //accesible because it is public
+    // cout << A.age << endl; // can be accesed beacuse it is public 
+    // // cout <<A.phone << endl; // cannot be accesed beacuse it is private 
+    // // A.chatting(); // cannot be accesed beacuse it is private
+    // A.sleep(); //accesible because it is public
+
+    cout << A.getGpa() << endl;
+    A.setGpa(6.7);
+
+    cout << A.getGpa() << endl;
+
+    cout << A.getGpa() << endl;
 
     return 0;
 }
