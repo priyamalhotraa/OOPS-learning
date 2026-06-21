@@ -5,10 +5,18 @@ using namespace std;
 
 class Vehicle // base class
 {
+private:
+    string name;
+
 public:
-    string name; //attributes
+     //attributes
     string model;
     int noOfTyres;
+
+    string getName()
+    {
+        return this->name; // this will let you access the name even when its private
+    }
 
     Vehicle(string _name, string _model, int _noOfTyres) // parameterizd constructors
     {
@@ -45,7 +53,7 @@ class Car : public Vehicle //child class
 
     void startAC()
     {
-        cout << "AC has started of " << name << endl;
+        cout << "AC has started of " << getName() << endl;
     }
 };
 
