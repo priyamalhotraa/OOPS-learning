@@ -5,10 +5,18 @@ using namespace std;
 
 class Vehicle // base class
 {
-private:
+public:
     string name; //attributes
     string model;
     int noOfTyres;
+
+    Vehicle(string _name, string _model, int _noOfTyres) // parameterizd constructors
+    {
+        cout << "I am inside Vehicle constructor " << endl;
+        this->name = _name;
+        this->model = _model;
+        this->noOfTyres = _noOfTyres;
+    }
 
 public:
     void start_engine() //behaviours
@@ -22,7 +30,30 @@ public:
     }
 };
 
+class Car : public Vehicle //child class
+{
+    public:
+    int noOfDoors;
+    string transmissionType;
+
+    Car(string _name, string _model, int _noOfTyres, int _noOfDoors, string _transmissionType):Vehicle(_name, _model, _noOfTyres)
+    {
+        cout << "I am inside Car constructor " << endl;
+        this->noOfDoors = _noOfDoors;
+        this->transmissionType = _transmissionType;
+    }
+
+    void startAC()
+    {
+        cout << "AC has started of " << name << endl;
+    }
+};
+
 int main()
 {
+    Car A("Maruti 800", "LXI", 4, 4, "Manual");
+    A.start_engine();
+    A.startAC();
+    A.stop_engine();
     return 0;
 }
