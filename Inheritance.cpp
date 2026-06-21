@@ -5,7 +5,10 @@ using namespace std;
 
 class Vehicle // base class
 {
-private:
+// private: //use getname to access name when its private
+//     string name;
+
+protected: //if protected member of base class is inherited in public mode, then it will stay protected only
     string name;
 
 public:
@@ -13,10 +16,10 @@ public:
     string model;
     int noOfTyres;
 
-    string getName()
-    {
-        return this->name; // this will let you access the name even when its private
-    }
+    // string getName()
+    // {
+    //     return this->name; // this will let you access the name even when its private
+    // }
 
     Vehicle(string _name, string _model, int _noOfTyres) // parameterizd constructors
     {
@@ -53,7 +56,7 @@ class Car : public Vehicle //child class
 
     void startAC()
     {
-        cout << "AC has started of " << getName() << endl;
+        cout << "AC has started of " << name << endl; // use getName() to access anme when name is private
     }
 };
 
