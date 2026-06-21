@@ -11,7 +11,7 @@ class Vehicle // base class
 protected: //if protected member of base class is inherited in public mode, then it will stay protected only
     string name;
 
-public:
+// public:
      //attributes
     string model;
     int noOfTyres;
