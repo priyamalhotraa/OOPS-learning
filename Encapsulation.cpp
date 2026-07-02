@@ -5,7 +5,7 @@ using namespace std;
 
 class Student
 {
-private: //for perfect encapsulation that means all the attributes are hidden
+private: // for perfect encapsulation that means all the attributes are hidden
 //public:
     // Attributes
     int id;
@@ -79,7 +79,7 @@ public:
         cout << this->name << " Bunking" << endl;
     }  
 
-    //destructor
+    // destructor
     ~Student()
     {
         cout << "Student Default Destructor called" << endl;
