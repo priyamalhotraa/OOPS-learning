@@ -1,5 +1,5 @@
-#include <iostream>
-#include <string>
+#include<iostream>
+#include<string>
 
 using namespace std;
 
@@ -30,7 +30,7 @@ protected: //if protected member of base class is inherited in public mode, then
     }
 
 public:
-    void start_engine() //behaviours
+    void start_engine() // behaviours
     {
         cout << "Engine is starting " << name << " " << model << endl;
     }
