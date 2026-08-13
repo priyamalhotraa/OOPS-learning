@@ -5,14 +5,14 @@ using namespace std;
 
 class Vehicle // base class
 {
-// private: //use getname to access name when its private
+// private:  // use getname to access name when its private
 //     string name;
 
-protected: //if protected member of base class is inherited in public mode, then it will stay protected only
+protected: // if protected member of base class is inherited in public mode, then it will stay protected only
     string name;
 
 // public:
-     //attributes
+     // attributes
     string model;
     int noOfTyres;
 
@@ -41,14 +41,14 @@ public:
     }
 };
 
-class Car : public Vehicle //child class
+class Car : public Vehicle // child class
 {
 protected:
     int noOfDoors;
     string transmissionType;
 
 public:
-    Car(string _name, string _model, int _noOfTyres, int _noOfDoors, string _transmissionType):Vehicle(_name, _model, _noOfTyres)
+    Car(string _name, string _model, int _noOfTyres, int _noOfDoors, string _transmissionType) : Vehicle(_name, _model, _noOfTyres) // vehicle is parent so it also need to be initialized in the constructor
     {
         cout << "I am inside Car constructor " << endl;
         this->noOfDoors = _noOfDoors;
@@ -68,15 +68,16 @@ protected:
     string suspensionType;
 
 public:
-    MotorCycle(string _name, string _model, int _noOfTyres, string _handleBarStyle, string _suspensionType):Vehicle(_name, _model, _noOfTyres)
+    MotorCycle(string _name, string _model, int _noOfTyres, string _handleBarStyle, string _suspensionType) : Vehicle(_name, _model, _noOfTyres) // vehicle is parent so it also need to be initialized in the constructor
     {
+        cout << "Motorcycle constructor called. " << endl;
         this->handleBarStyle = _handleBarStyle;
         this->suspensionType = _suspensionType;
     }
 
     void wheelie()
     {
-        cout << "Performing wheelie " << endl;
+        cout << "Performing wheelie " << name << endl;
     }
 };
 
