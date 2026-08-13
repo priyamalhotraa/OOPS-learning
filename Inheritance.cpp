@@ -39,6 +39,10 @@ public:
     {
         cout << "Engine is stopping " << name << " " << model << endl;
     }
+
+    ~Vehicle() {
+        cout << "I am inside Vehicle destructor " << endl;
+    }
 };
 
 class Car : public Vehicle // child class
@@ -59,6 +63,10 @@ public:
     {
         cout << "AC has started of " << name << endl; // use getName() to access anme when name is private
     }
+
+    ~Car() {
+        cout << "I am inside Car destructor " << endl;
+    }
 };
 
 class MotorCycle : public Vehicle
@@ -78,6 +86,10 @@ public:
     void wheelie()
     {
         cout << "Performing wheelie " << name << endl;
+    }
+
+    ~MotorCycle() {
+        cout << "I am inside MototCycle destructor " << endl;
     }
 };
 
